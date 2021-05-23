@@ -6,6 +6,18 @@ using namespace std;
 typedef long long ll;
 #define fastio ios_base::sync_with_stdio(false),cin.tie(NULL),cout.tie(NULL)
 
+//*******************......................NUMBER - THEORY....................********************
+
+//divisors in nlogn
+void positive_divisors(){
+    for(ll i=1;i<=1000001;i++)
+        for(ll j=i;j<=1000001;j+=i)
+            ++divisors[j];
+}       
+//end of divisors
+
+
+//*****************..........................SEGMENT - TREES.................*********************
 
 // min segment Tree passing as an argument
 

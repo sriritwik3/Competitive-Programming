@@ -7,7 +7,7 @@ using namespace std;
 typedef long long ll;
 #define fastio ios_base::sync_with_stdio(false),cin.tie(NULL),cout.tie(NULL)
 
-//mrt must be initialised as vector<ll> mrt[N];
+//mrt must be initialised as vector<ll> mrt[4*N];
 
 void buildMergeSortTree(ll a[],vector<ll> mrt[],ll si,ll ss,ll se){
     if(ss == se){

@@ -2,6 +2,7 @@
 #include<algorithm>
 #include<limits.h>
 #include<vector>
+#include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
 #define fastio ios_base::sync_with_stdio(false),cin.tie(NULL),cout.tie(NULL)
@@ -9,7 +10,7 @@ typedef long long ll;
 //*******************......................NUMBER - THEORY....................********************
 
 //divisors in nlogn
-void positive_divisors(){
+void positive_divisors(ll divisors[]){
     for(ll i=1;i<=1000001;i++)
         for(ll j=i;j<=1000001;j+=i)
             ++divisors[j];
@@ -138,6 +139,31 @@ ll queryMergeSortTree(vector<ll> mrt[],ll si,ll ss,ll se,ll qs,ll qe,ll k){
 
 
 //end of merge sort tree
+
+
+//*************************................................SPARSE TABLES..............................************************
+
+// start of sparse table for a range sum query
+
+ll rsq_sparse(){
+    ll N; //is the size of the array
+    ll sparsetable[N+1][K+1];
+    for(ll i=0;i<N;i++) sparsetable[i][0] = arr[i];
+
+    for (ll j = 1; j <= K; j++)
+        for (ll i = 0; i + (1 << j) <= N; i++)
+            sparsetable[i][j] = sparsetable[i][j-1] + sparsetable[i + (1 << (j - 1))][j - 1];
+    ll sum = 0;
+    for (ll j = K; j >= 0; j--) {
+        if ((1 << j) <= R - L + 1) {
+            sum += sparsetable[L][j];
+            L += 1 << j;
+     }
+    }
+    return sum;
+}
+
+// end of parse table for range sum query
 
 int32_t main()
 {

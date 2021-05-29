@@ -1,0 +1,7 @@
+Go to this link - https://cp-algorithms.com/data_structures/sparse-table.html
+Pre processing takes O(nlogn) time in any sparse trees.
+But querying happens in O(1) only if the algebraic function is idempotent.
+else it takes O(logn) time for each query.
+There are something called Disjoint sparse trees which have O(1) for query even for associative functions.
+- https://discuss.codechef.com/t/tutorial-disjoint-sparse-table/17404
+even sqrt tree would do this.

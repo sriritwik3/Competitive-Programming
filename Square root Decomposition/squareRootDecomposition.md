@@ -1,4 +1,4 @@
-Consider the array to be 0-indexed.  
+val - Consider the array to be 0-indexed.  
 [refer to this](https://cp-algorithms.com/data_structures/sqrt_decomposition.html)
 ```cpp
 ll sum = 0;
@@ -21,4 +21,10 @@ else{
     for (ll i=r_block*len; i<=r; i++)
         sum += a[i];
  }
+```
+
+For updating an element at position i to val.  
+```cpp
+b[i/len] += val - a[i];
+a[i] = val;
 ```
